@@ -95,7 +95,7 @@ datapath = cwd + '/data/'
 
 # Function to download data from official website and unzip
 # Checks if the data file already exists and downloads the data and unzips it only if it doesn't already exist
-def download_parse(fgz):
+def download_extract(fgz):
     if os.path.exists(os.path.join(datapath, fgz)):
         pass
     else:
@@ -105,10 +105,10 @@ def download_parse(fgz):
         os.system('gunzip ' + filename)
 
 # Paths of train and test images and labels
-download_parse('train-images-idx3-ubyte.gz')
-download_parse('t10k-images-idx3-ubyte.gz')
-download_parse('train-labels-idx1-ubyte.gz')
-download_parse('t10k-labels-idx1-ubyte.gz')
+download_extract('train-images-idx3-ubyte.gz')
+download_extract('t10k-images-idx3-ubyte.gz')
+download_extract('train-labels-idx1-ubyte.gz')
+download_extract('t10k-labels-idx1-ubyte.gz')
 
 # Example command for how the function works
 # trainX, trainY, testX, testY = mnist(noTrSamples=500, noTsSamples=200, digits=[3,8,9,2])
